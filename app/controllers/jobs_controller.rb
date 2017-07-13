@@ -50,6 +50,7 @@ class JobsController < ApplicationController
 
   def set_jobs
     @job = Job.find(params[:id])
+    @company = Company.find(params[:id])
   end
 
   def job_params
