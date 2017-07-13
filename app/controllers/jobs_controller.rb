@@ -48,6 +48,10 @@ class JobsController < ApplicationController
 
   private
 
+  def set_jobs
+    @job = Job.find(params[:id])
+  end
+
   def job_params
     params.require(:job).permit(:title, :description, :level_of_interest, :city)
   end
