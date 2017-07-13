@@ -9,9 +9,9 @@ RSpec.feature "User edits an existing job" do
     visit companies_path
     click_on "Johnson & Johnson"
     click_on "Basket Weaver"
-    click_on "Edit"
+    click_on "Edit Job"
     fill_in "job_title", with: updated_title
-    click_on "Update Job"
+    click_on "Update"
 
     expect(page).to have_content(updated_title)
     expect(page).to_not have_content(job.title)
