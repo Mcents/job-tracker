@@ -1,3 +1,7 @@
 <h1> <%= @category.title %></h1>
 
 <h4> <%= link_to "Edit Category", edit_category_path(@category) %></h4>
+
+<% @category.jobs.each do |t|  %>
+    <li><%= t.title %></l1>
+  <% end %>

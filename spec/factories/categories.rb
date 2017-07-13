@@ -1,5 +1,8 @@
 FactoryGirl.define do
   factory :category do
-    title "MyString"
+
+    sequence :title do |t|
+      "Category#{t}"
+    end
   end
 end
