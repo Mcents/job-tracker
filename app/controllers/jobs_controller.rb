@@ -33,6 +33,7 @@ class JobsController < ApplicationController
     @job = Job.find(params[:id])
     @company = Company.find(params[:company_id])
     if @job.update_attributes(job_params)
+      flash[:success] = "You updated #{@job.title} at #{@company.name}"
       redirect_to company_job_path(@company, @job)
     else
       render :edit

@@ -13,6 +13,7 @@ RSpec.feature "User edits an existing job" do
     fill_in "job_title", with: updated_title
     click_on "Update"
 
+    expect(page).to have_content(company.name)
     expect(page).to have_content(updated_title)
     expect(page).to_not have_content(job.title)
   end
