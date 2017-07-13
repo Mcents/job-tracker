@@ -2,10 +2,11 @@ require 'rails_helper'
 
 RSpec.feature "User edits an existing job" do
   scenario "they see the updated data for the individual job" do
-    job = Job.create(title: "Basket Weaver", description: "Weaving baskets with your toes", level_of_interest: 4, city: "San Jose", company_id: 2)
+    Company.create(name: "Johnson & Johnson")
+    job = Job.create(title: "Basket Weaver", description: "Weaving baskets with your toes", level_of_interest: 4, city: "San Jose", company_id: 1)
     updated_title = "Master BW"
 
-    visit job_path(job)
+    visit '/companies/1/jobs/1'
     click_on("Edit")
     fill_in "job_name", with: updated_title
     click_on "Update job"
