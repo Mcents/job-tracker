@@ -3,7 +3,8 @@ require 'rails_helper'
 RSpec.feature "User edits an existing job" do
   scenario "they see the updated data for the individual job" do
     company = Company.create(name: "Johnson & Johnson")
-    job = Job.create(title: "Basket Weaver", level_of_interest: 4, company_id: company.id, city: "San Jose")
+    category = Category.create(title: "Science")
+    job = Job.create(title: "Basket Weaver", level_of_interest: 4, company_id: company.id, city: "San Jose", category_id: category.id)
     updated_title = "Master BW"
 
     visit companies_path

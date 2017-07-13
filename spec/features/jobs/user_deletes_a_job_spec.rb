@@ -3,7 +3,8 @@ require 'rails_helper'
 RSpec.feature "User deletes an existing job" do
   scenario "they are redirected to the company page and no long see the job" do
     company = Company.create(name: "Johnson & Johnson")
-    job = Job.create(title: "Basket Weaver", level_of_interest: 4, company_id: company.id, city: "San Jose")
+    category = Category.create(title: "Science")
+    job = Job.create(title: "Basket Weaver", level_of_interest: 4, company_id: company.id, city: "San Jose", category_id: category.id)
 
     visit companies_path
     click_on "Johnson & Johnson"

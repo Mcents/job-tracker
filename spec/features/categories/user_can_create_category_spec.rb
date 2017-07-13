@@ -10,6 +10,5 @@ RSpec.feature "User creates a new category" do
     click_button "Create Category"
 
     expect(page).to have_content("Education")
-    expect(current_path).to eq("/categories/#{category.first.id}")
   end
 end

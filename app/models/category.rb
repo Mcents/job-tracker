@@ -1,4 +1,3 @@
 class Category < ApplicationRecord
-  validates :name, presence: true, uniqueness: true
-  belongs_to :job
+  has_many :jobs
 end
