@@ -7,7 +7,7 @@ All jobs for <strong><%= @company.name %></strong>
 <p>Create contact for <%= @company.name %></p>
 <%= render partial: 'contact' %>
 
-<h3>Contact Information</h3>
+<h2>Contact Information</h2>
 <% @company.contacts.each do |contact| %>
 <ul>
   <li><%= contact.name %></li>
