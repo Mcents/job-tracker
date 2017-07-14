@@ -16,4 +16,8 @@ RSpec.describe Contact, type: :model do
     it { is_expected.to validate_uniqueness_of(:email)}
     it { is_expected.to validate_presence_of(:title)}
   end
+
+  describe "relationships" do
+    it { should belong_to(:company)}
+  end
 end
