@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   resources :jobs
   resources :categories
+  resources :contacts, only: [:create]
 
   resources :companies do
     resources :jobs do
