@@ -2,7 +2,9 @@ FactoryGirl.define do
   factory :contact do
     name "MyString"
     title "MyString"
-    email "MyString"
+    sequence :email do |t|
+       "MyString#{t}"
+     end
     company nil
   end
 end
