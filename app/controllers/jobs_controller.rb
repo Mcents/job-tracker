@@ -3,6 +3,7 @@ class JobsController < ApplicationController
     if params.include?("sort")
       @company = Company.find(params[:company_id])
       @job = Job.all
+      @jobz= @job.where(city: params[:sort])
       @jobs = Job.find_by(params[:city],[:sort])
 
       render :location

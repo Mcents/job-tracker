@@ -1,7 +1,7 @@
 <h1>Jobs in <%= params[:sort] %></h1>
 
-  <% @job.where(city: params[:sort]).each do |g| %>
-  <ul>
-  <li><%= g.title %> at <strong><%= g.company.name %></li></strong>
+<% @jobz.each do |job| %>
+<ul>
+  <li><%= job.title %> at <strong><%= job.company.name %></li></strong>
 </ul>
   <% end %>
