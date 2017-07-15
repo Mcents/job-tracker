@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :jobs
   resources :categories
   resources :contacts, only: [:create]
+  resources :dashboard, only: [:index, :show]
 
   resources :companies do
     resources :jobs do

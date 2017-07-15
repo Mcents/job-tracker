@@ -4,6 +4,8 @@ class Job < ApplicationRecord
   belongs_to :category
   has_many :comments
 
-
+  def self.level_of_interest
+    group(:level_of_interest).count
+  end
 
 end

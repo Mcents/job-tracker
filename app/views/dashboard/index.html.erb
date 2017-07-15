@@ -1,0 +1,4 @@
+<h1>Jobs by level of interest</h1>
+<% @job.each do |interest, num| %>
+<p><strong><%="#{num.to_s}"%></strong> <%= "Jobs with a level of interest of #{interest}"%> </p>    
+<% end %>
