@@ -8,4 +8,8 @@ class Job < ApplicationRecord
     group(:level_of_interest).count
   end
 
+  def self.count_of_jobs_in_city
+    Job.all.pluck(:city)
+  end
+
 end

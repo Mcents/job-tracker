@@ -1,5 +1,7 @@
-<h1> All jobs in <%= @job.first.city %> </h1>
+<h1> Jobs in <%= params[:location] %> </h1>
 
-<%= @jobs.each do |t|  %>
-Jobs in <%= @t.city %>: <%= @job.pluck(:title).join(", ") %>
+<% @job.each do |t|  %>
+<ul>
+  <li><%= @job.pluck(:title).join(", ") %></li>
+</ul>
 <% end %>

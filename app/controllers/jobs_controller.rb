@@ -7,6 +7,10 @@ class JobsController < ApplicationController
       @jobs = Job.find_by(params[:city],[:sort])
 
       render :location
+    elsif params.include?("location")
+      @job = Job.where(city: params[:location])
+      @jobs = Job.all.order(:city)
+      render :city
     else
       @company = Company.find(params[:company_id])
       @jobs = @company.jobs

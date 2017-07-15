@@ -1,4 +1,22 @@
+<h1>Top three companies by level of interest</h1>
+<ol>
+  <% @company.each do |k, v| %>
+  <li> <%= "#{Company.find(k).name}'s jobs have a #{v} average levl of Interest" %></li>
+  <% end %>
+</ol>
+
 <h1>Jobs by level of interest</h1>
 <% @job.each do |interest, num| %>
-<p><strong><%="#{num.to_s}"%></strong> <%= "Jobs with a level of interest of #{interest}"%> </p>    
+<p><strong><%="#{num.to_s}"%></strong> <%= "Jobs with a level of interest of #{interest}"%> </p>
 <% end %>
+
+
+<h2>Number of jobs by City</h2>
+<% freq = Hash.new(0)
+@jobs.each { |x| freq[x] += 1 } %>
+<% @final = freq.map{ |key, value| "#{key}"} %>
+<% @final2 = freq.map{ |key, value| "#{value}"} %>
+<% @final3 = @final.zip(@final2).flatten.compact %>
+<% @final3.each do |city| %>
+  <%= link_to city, ("#{jobs_path}""?location=""#{city}") %>
+  <% end %>
