@@ -1,0 +1,5 @@
+<h1> Interest Stuff</h1>
+
+<% @jobs.each do |job| %>
+  <p><%= link_to job.title, company_job_path(job.company_id, job.id) %> at <strong><%= job.company.name %></p></strong>
+  <% end %>

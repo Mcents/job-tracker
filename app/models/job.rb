@@ -12,4 +12,5 @@ class Job < ApplicationRecord
     Job.all.pluck(:city)
   end
 
+
 end
