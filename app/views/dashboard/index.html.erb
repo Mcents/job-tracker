@@ -17,6 +17,7 @@
 <% @final = freq.map{ |key, value| "#{key}"} %>
 <% @final2 = freq.map{ |key, value| "#{value}"} %>
 <% @final3 = @final.zip(@final2).flatten.compact %>
-<% @final3.each do |city| %>
-  <%= link_to city, ("#{jobs_path}""?location=""#{city}") %>
+<% @h = Hash[*@final3] %>
+<% @h.each do |key, value| %>
+  <p><%= link_to "#{key}: #{value}", ("#{jobs_path}""?location=""#{key}") %></p>
   <% end %>
