@@ -1,7 +1,7 @@
 <h1> Jobs in <%= params[:location] %> </h1>
 
-<% @job.each do |t|  %>
-<ul>
-  <li><%= @job.pluck(:title).join(", ") %></li>
-</ul>
+
+<% @job.each do |t| %>
+<p><%= link_to t.title, company_job_path(t.company_id, t.id) %></p>
+
 <% end %>
