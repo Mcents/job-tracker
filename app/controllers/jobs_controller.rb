@@ -1,16 +1,16 @@
 class JobsController < ApplicationController
   def index
-    if (params.values & check_cities).any?
-      @company = Company.find(params[:company_id])
-      @job = Job.all
-      @jobs = @job.where(city: params[:sort])
-
-      render :location
-    elsif params.include?("location")
+    if params.include?("location")
       @job = Job.where(city: params[:location])
       @jobs = Job.all.order(:city)
 
       render :city
+    elsif (params.values & check_cities).any?
+        @company = Company.find(params[:company_id])
+        @job = Job.all
+        @jobs = @job.where(city: params[:sort])
+
+        render :location
     elsif params.include?("sort")
       @job = Job.all.where(level_of_interest: params[:sort])
       @jobs = @job.order(:level_of_interest).reverse
