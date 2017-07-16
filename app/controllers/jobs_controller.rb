@@ -9,12 +9,13 @@ class JobsController < ApplicationController
     elsif params.include?("location")
       @job = Job.where(city: params[:location])
       @jobs = Job.all.order(:city)
+
       render :city
     elsif params.include?("sort")
       @job = Job.all.where(level_of_interest: params[:sort])
       @jobs = @job.order(:level_of_interest).reverse
-      render :interest
 
+      render :interest
     else
       @company = Company.find(params[:company_id])
       @jobs = @company.jobs
