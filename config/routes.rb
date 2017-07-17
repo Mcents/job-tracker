@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   resources :categories
   resources :contacts, only: [:create]
   resources :dashboard, only: [:index, :show]
+  get '/login' => 'sessions#new'
+  post '/login' => 'sessions#create'
 
   resources :companies do
     resources :jobs do
