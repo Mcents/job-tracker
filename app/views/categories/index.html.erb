@@ -25,7 +25,7 @@
 
 <% @category.each do |cat| %>
 
-  <h1><%= link_to cat.title, category_path(cat) %></h1>
+  <h2><%= link_to cat.title, category_path(cat) %></h2>
   <%= link_to "Edit", edit_category_path(cat) %>
   <%= link_to "Delete", category_path(cat), method: :delete  %>
 
