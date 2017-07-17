@@ -1,0 +1,32 @@
+body {
+  padding-top: 50px;
+  text-align: center;
+  padding-left: 50px;
+}
+.starter-template {
+  padding: 40px 15px;
+  text-align: center;
+}
+
+.interest li {
+  display:  inline-block;
+  padding-right: 50px;
+}
+
+p {
+  display: inline-block;
+  font-size: 18px;
+  padding-right: 10px;
+}
+
+h1 {
+  color: #15048E;
+  font-family: futura;
+  font-weight: bold;
+}
+
+h4 {
+  color: #15048E;
+  font-family: futura;
+  font-size: 20px;
+}

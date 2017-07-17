@@ -1,23 +1,84 @@
-<h1>Top three companies by level of interest</h1>
-<ol>
-  <% @company.each do |k, v| %>
-  <li> <%= "#{Company.find(k).name}'s jobs have a #{v} average levl of Interest" %></li>
-  <% end %>
-</ol>
 
-<h1>Jobs by level of interest</h1>
-<% @job.each do |interest, num| %>
-<p><strong><%="#{num.to_s}"%></strong> <%= "Jobs with a level of interest of #{interest}"%> </p>
-<% end %>
+  <!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <link rel="icon" href="../../favicon.ico">
+
+      <title>Job Tracker Dashboard</title>
+
+      <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
+
+      <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+      <link href="starter-template.css" rel="stylesheet">
+      <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
+
+    </head>
+
+    <body>
+
+      <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Job Tracker</a>
+          </div>
+          <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="#">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+
+        <h1>Job Tracker Dashboard</h1>
+        <br>
+        <br>
+          <h4>Top three companies by level of interest</h4>
+
+            <% @company.each do |k, v| %>
+            <li> <%= "#{Company.find(k).name}'s jobs have a #{v} average level of Interest" %></li>
+            <% end %>
+            <br>
+            <br>
 
 
-<h2>Number of jobs by City</h2>
-<% freq = Hash.new(0)
-@jobs.each { |x| freq[x] += 1 } %>
-<% @final = freq.map{ |key, value| "#{key}"} %>
-<% @final2 = freq.map{ |key, value| "#{value}"} %>
-<% @final3 = @final.zip(@final2).flatten.compact %>
-<% @h = Hash[*@final3] %>
-<% @h.each do |key, value| %>
-  <p><%= link_to "#{key}: #{value}", ("#{jobs_path}""?location=""#{key}") %></p>
-  <% end %>
+          <div class="interest" >
+          <h4>Jobs by level of interest</h4>
+          <% @job.each do |interest, num| %>
+          <li><strong><%="#{num.to_s}"%></strong> <%= "Jobs with a level of interest of #{interest}"%></li>
+          <% end %>
+          </div>
+          <br>
+          <br>
+
+          <h4>Number of jobs by City</h4>
+          <% freq = Hash.new(0)
+          @jobs.each { |x| freq[x] += 1 } %>
+          <% @final = freq.map{ |key, value| "#{key}"} %>
+          <% @final2 = freq.map{ |key, value| "#{value}"} %>
+          <% @final3 = @final.zip(@final2).flatten.compact %>
+          <% @h = Hash[*@final3] %>
+          <% @h.each do |key, value| %>
+            <p><%= link_to "#{key}: #{value}", ("#{jobs_path}""?location=""#{key}") %></p>
+            <% end %>
+
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+      <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+      <script src="../../dist/js/bootstrap.min.js"></script>
+
+      <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+    </body>
+  </html>
