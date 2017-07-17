@@ -1,22 +1,22 @@
 body {
   padding-top: 50px;
   text-align: center;
-  padding-left: 50px;
 }
 .starter-template {
-  padding: 40px 15px;
   text-align: center;
 }
 
 .interest li {
   display:  inline-block;
-  padding-right: 50px;
+  padding: 3px;
+
 }
 
 p {
   display: inline-block;
   font-size: 18px;
-  padding-right: 10px;
+  text-decoration: none;
+  padding: 5px;
 }
 
 h1 {
@@ -28,5 +28,9 @@ h1 {
 h4 {
   color: #15048E;
   font-family: futura;
+  font-size: 20px;
+}
+
+.company li{
   font-size: 20px;
 }
