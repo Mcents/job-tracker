@@ -6,7 +6,6 @@ class JobsController < ApplicationController
 
       render :city
     elsif (params.values & check_cities).any?
-        @company = Company.find(params[:company_id])
         @job = Job.all
         @jobs = @job.where(city: params[:sort])
 

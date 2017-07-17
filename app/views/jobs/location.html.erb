@@ -1,7 +1,7 @@
 <h1>Jobs in <%= params[:sort] %></h1>
 
 <% @jobs.each do |job| %>
-<ul>
+
   <li><%= link_to job.title, company_job_path(job.company_id, job.id) %> at <strong><%= job.company.name %></li></strong>
-</ul>
+
   <% end %>
