@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :dashboard, only: [:index, :show]
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
+  get '/logout' => 'sessions#destroy'
 
   resources :companies do
     resources :jobs do
